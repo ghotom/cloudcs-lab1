@@ -7,13 +7,14 @@ from pydantic import BaseModel
 
 
 class Instance(BaseModel):
-    cylinders: int
-    displacement: float
-    horsepower: float
-    weight: float
-    acceleration: float
-    model_year: int
-    origin: int
+    longitude: float
+    latitude: float
+    housing_median_age: float
+    total_rooms: float
+    total_bedrooms: float
+    population: float
+    households: float
+    median_income: float
 
 
 app = FastAPI()

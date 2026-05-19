@@ -5,9 +5,8 @@ from pickle import load
 
 
 def make_inference(in_model: Pipeline, in_data: dict) -> dict[str, float]:
-    """Return the result of predictions for in_data using in_model."""
-    mpg = in_model.predict(pd.DataFrame(in_data, index=[0]))[0][0]
-    return {"mpg": round(mpg, 3)}
+    prediction = in_model.predict(pd.DataFrame(in_data, index=[0]))[0]
+    return {"median_house_value": round(prediction, 3)}
 
 
 def load_model(path: str) -> Pipeline:
