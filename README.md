@@ -57,17 +57,45 @@
 ### Проверка состояния сервиса
 ```bash
 curl http://localhost:8000/healthcheck
+```
 
 ### Корректный запрос с токеном
 ```bash
 curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00000" -H "Content-Type: application/json" -d '{"longitude": -122.23, "latitude": 37.88,"housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
-
+```
 
 ### Запрос без токена
 ```bash
 curl -X POST http://localhost:8000/predictions -H "Content-Type: application/json" -d '{ "longitude": -122.23, "latitude": 37.88, "housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
-
+```
 
 ### Запрос с неверным токеном
 ```bash
 curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00002" -H "Content-Type: application/json" -d '{ "longitude": -122.23, "latitude": 37.88, "housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
+```
+
+
+##  Запуск проекта
+
+git clone https://github.com/ghotom/cloudcs-lab1
+cd CloudCS-Lab1
+
+conda create -n cloudsc-env python=3.10
+conda activate cloudsc-env
+
+pip install -r requirements.txt
+
+
+set PYTHONPATH=./;./src
+
+
+cd src
+set MODEL_PATH=../models/pipeline.pkl
+uvicorn main:app --reload
+
+
+curl http://localhost:8000/healthcheck
+
+
+set PYTHONPATH=./;./src
+pytest test
