@@ -77,6 +77,7 @@ curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00002" 
 
 ##  Запуск проекта
 
+```bash
 git clone https://github.com/ghotom/cloudcs-lab1
 cd CloudCS-Lab1
 
@@ -99,3 +100,4 @@ curl http://localhost:8000/healthcheck
 
 set PYTHONPATH=./;./src
 pytest test
+```
