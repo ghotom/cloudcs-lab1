@@ -12,7 +12,7 @@
 
 ## Используемый датасет
 
-**California Housing** (CSV, доступен по ссылке: [housing.csv](data/housing.csv)).
+**California Housing** (CSV, доступен по ссылке: [housing.csv](https://www.kaggle.com/datasets/camnugent/california-housing-prices)).
 
 Признаки:
 - `longitude` — географическая долгота района  
