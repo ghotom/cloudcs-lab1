@@ -61,17 +61,17 @@ curl http://localhost:8000/healthcheck
 
 ### Корректный запрос с токеном
 ```bash
-curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00000" -H "Content-Type: application/json" -d '{"longitude": -122.23, "latitude": 37.88,"housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
+curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00000" -H "Content-Type: application/json" -d "{\"longitude\":-122.23,\"latitude\":37.88,\"housing_median_age\":41.0,\"total_rooms\":880.0,\"total_bedrooms\":129.0,\"population\":322.0,\"households\":126.0,\"median_income\":8.3252}"
 ```
 
 ### Запрос без токена
 ```bash
-curl -X POST http://localhost:8000/predictions -H "Content-Type: application/json" -d '{ "longitude": -122.23, "latitude": 37.88, "housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
+curl -X POST http://localhost:8000/predictions -H "Content-Type: application/json" -d "{\"longitude\":-122.23,\"latitude\":37.88,\"housing_median_age\":41.0,\"total_rooms\":880.0,\"total_bedrooms\":129.0,\"population\":322.0,\"households\":126.0,\"median_income\":8.3252}"
 ```
 
 ### Запрос с неверным токеном
 ```bash
-curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00002" -H "Content-Type: application/json" -d '{ "longitude": -122.23, "latitude": 37.88, "housing_median_age": 41.0, "total_rooms": 880.0, "total_bedrooms": 129.0, "population": 322.0, "households": 126.0, "median_income": 8.3252}'
+curl -X POST http://localhost:8000/predictions -H "Authorization: Bearer 00002" -H "Content-Type: application/json" -d "{\"longitude\":-122.23,\"latitude\":37.88,\"housing_median_age\":41.0,\"total_rooms\":880.0,\"total_bedrooms\":129.0,\"population\":322.0,\"households\":126.0,\"median_income\":8.3252}"
 ```
 
 
